@@ -1,8 +1,8 @@
 name: makeLint
-on: commit
+on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-first-step
+        name: my-first-step
         run: make lint
