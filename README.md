@@ -6,3 +6,5 @@
 [![example workflow](https://github.com/AeolusG/frontend-project-lvl1/actions/workflows/make-lint.yml/badge.svg)](https://github.com/AeolusG/frontend-project-lvl1/actions)
 
 [![asciicast](https://asciinema.org/a/U0NnRqVqjHEY96JFUqWSYdiS7.svg)](https://asciinema.org/a/U0NnRqVqjHEY96JFUqWSYdiS7)
+
+[![asciicast](https://asciinema.org/a/xrHarAQ5hovEH7AlR0OnJROxn.svg)](https://asciinema.org/a/xrHarAQ5hovEH7AlR0OnJROxn)
