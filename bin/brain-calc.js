@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import {
-    cons, car, cdr, toString, isPair,
-  } from '@hexlet/pairs';
+  cons, car, cdr, toString, isPair,
+} from '@hexlet/pairs';
 
 const randomNum = () => Math.round(Math.random() * (100 - 0) + 1);
-const randomNum2 = () => Math.round(Math.random() * (50 - 0) + 1);
 
 const brainCalc = () => {
   console.log('Welcome to the Brain Games!');
@@ -13,47 +12,25 @@ const brainCalc = () => {
   console.log(`Hello, ${userName}!`);
   console.log('What is the result of the expression?');
   let counter = 0;
-    let randomNumber = randomNum();
-    let randomNumber2 = randomNum2();
-      while (counter < 3) {
-        const sum = randomNumber + randomNumber2;
-        console.log(`Question: ${randomNumber} + ${randomNumber2}`);
-        let answer = readlineSync.question('Your answer: ');
-          if(`${sum}` === `${answer}`) {
-              counter += 1;
-              console.log('Correct!');
-        } else {
-            console.log(`${answer} is wrong answer ;(. Correct answer was ${sum}. \nLet's try again, ${userName}!`);
-            break;
-        }
-        randomNumber = randomNum();
-        randomNumber2 = randomNum2();
-        const subtract = randomNumber - randomNumber2;
-        console.log(`Question: ${randomNumber} - ${randomNumber2}`);
-        answer = readlineSync.question('Your answer: ');
-        if(`${subtract}` === `${answer}`) {
-            counter += 1;
-            console.log('Correct!');
-      } else {
-          console.log(`${answer} is wrong answer ;(. Correct answer was ${subtract}. \nLet's try again, ${userName}!`);
-          break;
-      }
-      randomNumber = randomNum();
-      randomNumber2 = randomNum2();
-      const multiply = randomNumber * randomNumber2;
-      console.log(`Question: ${randomNumber} * ${randomNumber2}`);
-      answer = readlineSync.question('Your answer: ');
-
-      if(`${multiply}` === `${answer}`) {
-        counter += 1;
-        console.log('Correct!');
-  } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${multiply}. \nLet's try again, ${userName}!`);
+  let i = 0;
+  while (counter < 3) {
+    const randomNumber = randomNum();
+    const randomNumber2 = randomNum();
+    const operations = ['+', '-', '*'];
+    const expression = eval(`${randomNumber} ${operations[i]} ${randomNumber2}`);
+    console.log(`Question: ${randomNumber} ${operations[i]} ${randomNumber2}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (`${expression}` === `${answer}`) {
+      counter += 1;
+      i += 1;
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${expression}'. \nLet's try again, ${userName}!`);
       break;
+    }
   }
-}
-      if (counter === 3 ){
-      console.log(`Congratulations, ${userName}!`);
-      }
+  if (counter === 3) {
+    console.log(`Congratulations, ${userName}!`);
   }
+};
 brainCalc();
