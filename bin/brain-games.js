@@ -6,4 +6,3 @@ const greeting = () => {
 };
 greeting();
 meeting();
-

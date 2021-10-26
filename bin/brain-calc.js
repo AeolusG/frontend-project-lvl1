@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import {
-  cons, car, cdr, toString, isPair,
+  cons, car, cdr,
 } from '@hexlet/pairs';
 
 const randomNum = () => Math.round(Math.random() * (100 - 0) + 1);
-
 const brainCalc = () => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
@@ -16,16 +15,17 @@ const brainCalc = () => {
   while (counter < 3) {
     const randomNumber = randomNum();
     const randomNumber2 = randomNum();
+    const pair = cons(randomNumber, randomNumber2);
     const operations = ['+', '-', '*'];
-    const expression = eval(`${randomNumber} ${operations[i]} ${randomNumber2}`);
-    console.log(`Question: ${randomNumber} ${operations[i]} ${randomNumber2}`);
+    const expressions = [car(pair) + cdr(pair), car(pair) - cdr(pair), car(pair) * cdr(pair)];
+    console.log(`Question: ${car(pair)} ${operations[i]} ${cdr(pair)}`);
     const answer = readlineSync.question('Your answer: ');
-    if (`${expression}` === `${answer}`) {
+    if (`${expressions[i]}` === `${answer}`) {
       counter += 1;
       i += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${expression}'. \nLet's try again, ${userName}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${expressions[i]}'. \nLet's try again, ${userName}!`);
       break;
     }
   }
