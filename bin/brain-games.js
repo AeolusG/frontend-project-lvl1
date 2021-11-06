@@ -3,6 +3,6 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-unresolved */
 
-import greeting from '../src/games/Games.js';
+import runGreeting from '../src/games/games.js';
 
-greeting();
+runGreeting();

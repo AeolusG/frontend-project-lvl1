@@ -2,6 +2,6 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-named-as-default */
 
-import brainPrime from '../src/games/Prime.js';
+import runPrime from '../src/games/prime.js';
 
-brainPrime();
+runPrime();

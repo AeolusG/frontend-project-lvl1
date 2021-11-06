@@ -3,8 +3,8 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/named */
 
-import gameLogic from '../index.js';
-import randomNum from '../utils.js';
+import run from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const isPrime = (n) => {
   if (n < 2) {
@@ -22,11 +22,11 @@ const isPrime = (n) => {
 const description =
   'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const brainPrime = () => {
-  const question = randomNum(100, 0);
+const makeRound = () => {
+  const question = generateRandomNumber(100, 0);
   const currentAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, currentAnswer];
 };
 export default () => {
-  gameLogic(description, brainPrime);
+  run(description, makeRound);
 };

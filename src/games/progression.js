@@ -3,8 +3,8 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/named */
 
-import gameLogic from '../index.js';
-import randomNum from '../utils.js';
+import run from '../index.js';
+import generateRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 
@@ -12,25 +12,25 @@ let trueAnswer = null;
 
 const randomProgression = () => {
   const result = [];
-  result.push(randomNum(10, 0));
+  result.push(generateRandomNumber(10, 0));
   let i = 1;
-  const d = randomNum(10, 0);
+  const d = generateRandomNumber(10, 0);
   while (result.length < 10) {
     result.push(d + result[i - 1]);
     i += 1;
   }
-  const missingNum = randomNum(10, 0);
+  const missingNum = generateRandomNumber(9, 0);
   trueAnswer = result[missingNum];
   result[missingNum] = '..';
   return result.join(' ');
 };
 
-const progression = () => {
+const makeRound = () => {
   const question = randomProgression();
   const currentAnswer = `${trueAnswer}`;
   return [question, currentAnswer];
 };
 
 export default () => {
-  gameLogic(description, progression);
+  run(description, makeRound);
 };

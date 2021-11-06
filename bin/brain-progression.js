@@ -2,6 +2,6 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-named-as-default */
 
-import brainProgression from '../src/games/Progression.js';
+import runProgression from '../src/games/progression.js';
 
-brainProgression();
+runProgression();
