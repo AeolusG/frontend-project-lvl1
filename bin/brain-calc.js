@@ -2,6 +2,6 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-named-as-default */
 
-import runCalc from '../src/games/Calc.js';
+import runCalc from '../src/games/calc.js';
 
 runCalc();
