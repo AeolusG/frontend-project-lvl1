@@ -2,6 +2,6 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-named-as-default */
 
-import isEven from '../src/isEven.js';
+import isEven from '../src/games/isEven.js';
 
 isEven();

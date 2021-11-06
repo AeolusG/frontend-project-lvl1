@@ -1,10 +1,9 @@
 #!/usr/bin/env node
+/* eslint-disable comma-dangle */
 
 import readlineSync from 'readline-sync';
 
-const randomNum = (max, min) => Math.round(Math.random() * (max - min) + min);
-
-const gameLogic = (description, game) => {
+export default (description, game) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -19,7 +18,9 @@ const gameLogic = (description, game) => {
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== correctAnswer) {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
+      console.log(
+        `"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`
+      );
       console.log(`Let's try again, ${userName}!`);
       return;
     }
@@ -30,4 +31,3 @@ const gameLogic = (description, game) => {
 
   console.log(`Congratulations, ${userName}!`);
 };
-export { gameLogic, randomNum };

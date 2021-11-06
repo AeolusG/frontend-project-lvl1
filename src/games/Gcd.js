@@ -1,6 +1,10 @@
 #!/usr/bin/env node
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/named */
 
-import { randomNum, gameLogic } from './index.js';
+import gameLogic from '../index.js';
+import randomNum from '../utils.js';
 
 const gcd = (divident, divisor) => {
   if (divisor === 0) {

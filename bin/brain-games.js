@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-import meeting from '../src/cli.js';
-import greeting from '../src/index.js';
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable import/no-unresolved */
+
+import greeting from '../src/games/Games.js';
 
 greeting();
-meeting();

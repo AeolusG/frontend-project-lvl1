@@ -1,6 +1,10 @@
 #!/usr/bin/env node
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/named */
 
-import { randomNum, gameLogic } from '../src/index.js';
+import gameLogic from '../index.js';
+import randomNum from '../utils.js';
 
 const isPrime = (n) => {
   if (n < 2) {
@@ -14,7 +18,9 @@ const isPrime = (n) => {
   }
   return result;
 };
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+// eslint-disable-next-line operator-linebreak
+const description =
+  'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const brainPrime = () => {
   const question = randomNum(100, 0);

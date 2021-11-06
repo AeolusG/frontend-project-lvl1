@@ -1,7 +1,10 @@
-#!/usr/bin/env node
+#!/usr/bin / env node;
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
 
 import { cons, car, cdr } from '@hexlet/pairs';
-import { randomNum, gameLogic } from '../src/index.js';
+import gameLogic from '../index.js';
+import randomNum from '../utils.js';
 
 const description = 'What is the result of the expression?';
 
