@@ -8,27 +8,25 @@ import generateRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 
-let trueAnswer = null;
+let missingAnswer = null;
 
 const randomProgression = () => {
   const result = [];
   result.push(generateRandomNumber(10, 0));
-  let i = 1;
-  const d = generateRandomNumber(10, 0);
-  while (result.length < 10) {
-    result.push(d + result[i - 1]);
-    i += 1;
+  const stepOfArithmeticProgression = generateRandomNumber(10, 0);
+  for (let i = 1; result.length < 10; i += 1) {
+    result.push(stepOfArithmeticProgression + result[i - 1]);
   }
   const missingNum = generateRandomNumber(9, 0);
-  trueAnswer = result[missingNum];
+  missingAnswer = result[missingNum];
   result[missingNum] = '..';
   return result.join(' ');
 };
 
 const makeRound = () => {
   const question = randomProgression();
-  const currentAnswer = `${trueAnswer}`;
-  return [question, currentAnswer];
+  const trueAnswer = `${missingAnswer}`;
+  return [question, trueAnswer];
 };
 
 export default () => {

@@ -10,13 +10,12 @@ const isPrime = (n) => {
   if (n < 2) {
     return false;
   }
-  let result = true;
   for (let i = 2; i < n; i += 1) {
     if (n % i === 0) {
-      result = false;
+      return false;
     }
   }
-  return result;
+  return true;
 };
 // eslint-disable-next-line operator-linebreak
 const description =
@@ -24,8 +23,8 @@ const description =
 
 const makeRound = () => {
   const question = generateRandomNumber(100, 0);
-  const currentAnswer = isPrime(question) ? 'yes' : 'no';
-  return [question, currentAnswer];
+  const trueAnswer = isPrime(question) ? 'yes' : 'no';
+  return [question, trueAnswer];
 };
 export default () => {
   run(description, makeRound);

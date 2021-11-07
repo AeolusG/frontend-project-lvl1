@@ -10,9 +10,9 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no"';
 
 const makeRound = () => {
   const question = generateRandomNumber(50, 0);
-  const currentAnswer = question % 2 === 0 ? 'yes' : 'no';
+  const trueAnswer = question % 2 === 0 ? 'yes' : 'no';
 
-  return [question, currentAnswer];
+  return [question, trueAnswer];
 };
 
 export default () => {

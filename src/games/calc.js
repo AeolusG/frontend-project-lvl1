@@ -2,7 +2,6 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-named-as-default-member */
 
-import { cons, car, cdr } from '@hexlet/pairs';
 import run from '../index.js';
 import generateRandomNumber from '../utils.js';
 
@@ -15,19 +14,22 @@ const randomOperation = () => {
   const operation = ['+', '-', '*'];
   return operation[i];
 };
-
-const makeRound = () => {
+let expressions = [];
+const askQuestion = () => {
   const randomNumber = generateRandomNumber(100, 0);
   const randomNumber2 = generateRandomNumber(100, 0);
-  const pair = cons(randomNumber, randomNumber2);
-  const expressions = [
-    car(pair) + cdr(pair),
-    car(pair) - cdr(pair),
-    car(pair) * cdr(pair),
+  expressions = [
+    randomNumber + randomNumber2,
+    randomNumber - randomNumber2,
+    randomNumber * randomNumber2,
   ];
-  const question = `${car(pair)} ${randomOperation()} ${cdr(pair)}`;
-  const currentAnswer = `${expressions[i]}`;
-  return [question, currentAnswer];
+  return `${randomNumber} ${randomOperation()} ${randomNumber2}`;
+};
+
+const makeRound = () => {
+  const question = `${askQuestion()}`;
+  const trueAnswer = `${expressions[i]}`;
+  return [question, trueAnswer];
 };
 
 export default () => {
