@@ -1,7 +1,7 @@
 install: #устанавливаем зависимости
 	npm ci
-# brain-games: #запускаем игру
-# 	node bin/brain-games.js
+brain-games: #запускаем игру
+	node bin/brain-games.js
 publish:
 	npm publish --dry-run
 lint: #запускаем линтер
